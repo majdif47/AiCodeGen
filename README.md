@@ -1,6 +1,6 @@
 # 🧠 AI Code Generator 🖥️
 
-A **Go-based automation tool** that uses **WSL** to dynamically generate useful programming code snippets across various languages with the help of AI! 🚀 The tool also automates Git commits and pushes, making your workflow seamless. 😎
+A **Go-based automation tool** that dynamically generates useful programming code snippets across various languages with the help of AI! 🚀 The tool also automates Git commits and pushes, making your workflow seamless. 😎
 
 ---
 
@@ -10,24 +10,21 @@ A **Go-based automation tool** that uses **WSL** to dynamically generate useful 
 - ✨ **Dynamic File Management**: Saves each snippet in a well-structured file with proper extensions.  
 - 🤖 **AI Integration**: Leverages AI models to create meaningful code.  
 - 🔄 **Automated Git Workflow**: Adds, commits, and pushes changes to your GitHub repository.  
-- 🖥️ **WSL Integration**: Runs seamlessly in a WSL environment, ensuring cross-platform compatibility.  
 
 ---
 
 ## 🚀 How It Works
 
-1. 🏰 The program navigates to the project directory in **WSL**.
+1. 🏰 The program navigates to the project directory.
 2. 🧑‍💻 Runs `go run` to execute the main program.
 3. 📂 Generates a code snippet in the chosen language and saves it in the `AiCode` folder.
 4. 📝 Commits the new file with a meaningful message and pushes it to the repository.  
-5. 🛠️ Exits the WSL environment automatically.  
 
 ---
 
 ## ⚙️ Requirements
 
-- 🐿 **WSL** (Windows Subsystem for Linux) installed and configured.  
-- 📦 **Go** installed on your WSL environment.  
+- 📦 **Go** installed on your system.  
 - 🌐 Access to GitHub with proper permissions.  
 - 💡 An AI model accessible from your system (like `ollama`).  
 
