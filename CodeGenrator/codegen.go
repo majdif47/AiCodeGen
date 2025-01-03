@@ -87,6 +87,21 @@ func main() {
 	}
   cleanCodeFile(fileName, selectedLang)
 	updateCounter(counterFile, counter+1)
+  gitCommands := [][]string{
+		{"git", "add ."},
+		{"git", "commit", "-m", fmt.Sprintf("Add %s", fileName)},
+		{"git", "push"},
+	}
+
+	for _, args := range gitCommands {
+		cmd := exec.Command(args[0], args[1:]...)
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+		err = cmd.Run()
+		if err != nil {
+			log.Fatalf("Error running git command (%v): %v", args, err)
+		}
+	}
 	fmt.Printf("Generated code saved to %s and pushed to GitHub.\n", fileName)
 }
 
