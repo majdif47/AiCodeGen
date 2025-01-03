@@ -1,6 +1,6 @@
 # 🧠 AI Code Generator 🖥️
 
-A **Go-based automation tool** that dynamically generates programming code snippets across various languages with the help of AI. 🚀 While the generated code might range from useful to outright nonsensical, this tool provides a fun way to explore AI-assisted code generation. 🤔 It also automates basic Git workflow.
+Welcome to AiCodeGen, where a new AI-generated code snippet is added daily. Witness the fun and chaos as AI creates everything from garbage code to surprisingly  decent snippets.🤔 
 
 ---
 
@@ -15,10 +15,13 @@ A **Go-based automation tool** that dynamically generates programming code snipp
 
 ## 🚀 How It Works
 
-1. 🏰 The program navigates to the project directory.
-2. 🧑‍💻 Runs `go run` to execute the main program.
-3. 📂 Generates a code snippet in the chosen language and saves it in the `AiCode` folder.
-4. 📝 Commits the new file with a meaningful message and pushes it to the repository.  
+
+1. 🧑‍💻 Runs the Go program.
+2. 📂 Generates and saves random code.
+3. 📝 Commits and pushes it to the repo.
+
+
+
 
 ---
 
