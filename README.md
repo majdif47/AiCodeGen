@@ -1,6 +1,6 @@
 # 🧠 AI Code Generator 🖥️
 
-A **Go-based automation tool** that dynamically generates useful programming code snippets across various languages with the help of AI! 🚀 The tool also automates Git commits and pushes, making your workflow seamless. 😎
+A **Go-based automation tool** that dynamically generates programming code snippets across various languages with the help of AI. 🚀 While the generated code might range from useful to outright nonsensical, this tool provides a fun way to explore AI-assisted code generation. 🤔 It also automates Git commits and pushes to streamline your workflow. 
 
 ---
 
@@ -8,7 +8,7 @@ A **Go-based automation tool** that dynamically generates useful programming cod
 
 - 🎲 **Random Language Selection**: Generates code snippets in Go, Rust, Python, or JavaScript.  
 - ✨ **Dynamic File Management**: Saves each snippet in a well-structured file with proper extensions.  
-- 🤖 **AI Integration**: Leverages AI models to create meaningful code.  
+- 🤖 **AI Integration**: Uses AI models to attempt creating meaningful code (results may vary).  
 - 🔄 **Automated Git Workflow**: Adds, commits, and pushes changes to your GitHub repository.  
 
 ---
