@@ -1,14 +1,14 @@
 # 🧠 AI Code Generator 🖥️
 
-A **Go-based automation tool** that dynamically generates programming code snippets across various languages with the help of AI. 🚀 While the generated code might range from useful to outright nonsensical, this tool provides a fun way to explore AI-assisted code generation. 🤔 It also automates Git commits and pushes to streamline your workflow. 
+A **Go-based automation tool** that dynamically generates programming code snippets across various languages with the help of AI. 🚀 While the generated code might range from useful to outright nonsensical, this tool provides a fun way to explore AI-assisted code generation. 🤔 It also automates basic Git workflow.
 
 ---
 
 ## 🌟 Features
 
 - 🎲 **Random Language Selection**: Generates code snippets in Go, Rust, Python, or JavaScript.  
-- ✨ **Dynamic File Management**: Saves each snippet in a well-structured file with proper extensions.  
-- 🤖 **AI Integration**: Uses AI models to attempt creating meaningful code (results may vary).  
+- ✨ **Dynamic File Management**: Saves each snippet in a file with the proper extensions.  
+- 🤖 **AI Integration**: Uses AI models to create garbage/nonsensical/lame to half-decent code (results may vary).  
 - 🔄 **Automated Git Workflow**: Adds, commits, and pushes changes to your GitHub repository.  
 
 ---
@@ -22,24 +22,6 @@ A **Go-based automation tool** that dynamically generates programming code snipp
 
 ---
 
-## ⚙️ Requirements
-
-- 📦 **Go** installed on your system.  
-- 🌐 Access to GitHub with proper permissions.  
-- 💡 An AI model accessible from your system (like `ollama`).  
-
----
-
-## 🛠️ Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/AiCodeGen.git
-   ```
-2. Navigate to the project directory and ensure dependencies are installed.
-3. Add the repository path to your Git config for seamless automation.
-
----
 
 ## 🌟 Example Output
 
@@ -57,10 +39,7 @@ A **Go-based automation tool** that dynamically generates programming code snipp
 
 ## 🤝 Contributions
 
-Feel free to fork the repository, submit pull requests, or create issues! Let’s make this tool even more awesome. 🎉
+Feel free to fork the repository, submit pull requests, or create issues! Let’s make this tool even more useless. 🎉
 
 --- 
 
-## 📜 License
-
-This project is open-source and licensed under the MIT License.
