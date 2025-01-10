@@ -1,62 +1,61 @@
-class WeatherTracker {
-  constructor() {
-    this.currentWeather = {};
-    this.weatherHistory = [];
-  }
+// Function to visualize the shortest paths in an unweighted graph using A* search algorithm
+function visualizeShortestPaths(graph, startNode) {
+  const openSet = [startNode];
+  const cameFrom = {};
+  const gScore = { [startNode]: 0 };
+  const fScore = { [startNode]: heuristic(startNode) };
 
-  async getWeather(city) {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=YOUR_API_KEY`);
-    if (response.ok) {
-      this.currentWeather = await response.json();
-      return this.currentWeather;
-    } else {
-      throw new Error('Failed to retrieve weather data');
+  while (openSet.length > 0) {
+    let currentNode = openSet[0];
+
+    for (const neighbor of graph[currentNode]) {
+      if (!gScore[neighbor] || gScore[neighbor] + heuristic(neighbor) < fScore[neighbor]) {
+        cameFrom[neighbor] = currentNode;
+        gScore[neighbor] = gScore[currentNode] + 1;
+        fScore[neighbor] = gScore[neighbor] + heuristic(neighbor);
+        if (!openSet.includes(neighbor)) openSet.push(neighbor);
+      }
     }
+
+    openSet.sort((a, b) => fScore[a] - fScore[b]);
+    if (openSet.length === 0 || !openSet[0]) break;
+    openSet.shift();
   }
 
-  addWeatherEntry(city, temperature, condition) {
-    const entry = { city, temperature, condition };
-    this.weatherHistory.push(entry);
+  const path = [];
+  let current = startNode;
+
+  while (current !== undefined) {
+    path.unshift(current);
+    current = cameFrom[current];
   }
 
-  getWeatherHistory() {
-    return this.weatherHistory.map((entry, index) => ({ ...entry, timestamp: new Date(`${Date.now()}${index}`) }));
+  return { shortestPath: path, gScores: gScore };
+}
+
+// Heuristic function for A* search algorithm
+function heuristic(node) {
+  // For this example, we'll use a simple Manhattan distance heuristic
+  switch (node) {
+    case 'A':
+      return 0;
+    case 'B':
+      return Math.abs(1 - node);
+    case 'C':
+      return Math.abs(2 - node);
+    default:
+      throw new Error(`Unknown node: ${node}`);
   }
 }
 
-class WeatherApp {
-  constructor(tracker) {
-    this.tracker = tracker;
-  }
+// Example usage
+const graph = {
+  A: ['B', 'C'],
+  B: ['A', 'D'],
+  C: ['A', 'F'],
+  D: ['B'],
+  E: ['F'],
+  F: ['C', 'E']
+};
 
-  startTrackingWeather(city) {
-    this.tracker.getWeather(city).then((weatherData) => {
-      console.log(`Current weather in ${city}:`);
-      console.log(`Temperature: ${weatherData.main.temp} K`);
-      console.log(`Condition: ${weatherData.weather[0].description}`);
-      this.tracker.addWeatherEntry(city, weatherData.main.temp, weatherData.weather[0].description);
-    }).catch((error) => {
-      console.error(error);
-    });
-  }
-
-  getWeatherHistory() {
-    return this.tracker.getWeatherHistory();
-  }
-}
-
-const tracker = new WeatherTracker();
-const app = new WeatherApp(tracker);
-
-app.startTrackingWeather('London');
-// app.getWeatherHistory();
-
-// Example usage with async/await
-async function main() {
-  const weatherData = await tracker.getWeather('New York');
-  console.log(`Current weather in New York:`);
-  console.log(`Temperature: ${weatherData.main.temp} K`);
-  console.log(`Condition: ${weatherData.weather[0].description}`);
-}
-
-main();
+console.log(visualizeShortestPaths(graph, 'A'));
